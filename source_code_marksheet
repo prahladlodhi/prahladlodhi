@@ -1,0 +1,107 @@
+#include <iostream>
+using namespace std;
+int main(){
+    cout<<"GENRATE YOU REPORT CARD \n";
+    float physics,chemistry,mathematics,english,computer_science,percentage,total_marks ;
+    char choice;
+    do {
+        do {
+            cout<<"Enter your marks in physics: ";
+            cin>>physics;
+            if (physics < 0 || physics > 100) {
+                cout << "Invalid input. Please enter marks between 0 and 100." << endl;
+            }
+        } while (physics < 0 || physics > 100);
+
+
+        do {
+            cout<<"Enter your marks in chemistry: ";
+            cin>>chemistry;
+            if (chemistry < 0 || chemistry > 100) {
+                cout << "Invalid input. Please enter marks between 0 and 100." << endl;
+            }
+        } while (chemistry < 0 || chemistry > 100);
+
+
+        do {
+            cout<<"Enter your marks in english: ";
+            cin>>english;
+            if (english < 0 || english > 100) {
+                cout << "Invalid input. Please enter marks between 0 and 100." << endl;
+            }
+        } while (english < 0 || english > 100);
+
+
+        do {
+            cout<<"Enter your marks in computer_science: ";
+            cin>>computer_science;
+            if (computer_science < 0 || computer_science > 100) {
+                cout << "Invalid input. Please enter marks between 0 and 100." << endl;
+            }
+        } while (computer_science < 0 || computer_science > 100);
+
+
+        do {
+            cout<<"Enter your marks in mathematics: ";
+            cin>>mathematics;
+            if (mathematics < 0 || mathematics > 100) {
+                cout << "Invalid input. Please enter marks between 0 and 100." << endl;
+            }
+        } while (mathematics < 0 || mathematics > 100);
+
+
+    total_marks=physics+chemistry+english+mathematics+computer_science;
+    percentage=(total_marks/500.0)*100;
+
+    //  condition for grading and paseed 
+    if(percentage<=100 && percentage>90){
+        cout<<"Grade : A+" << endl;
+        cout<<"Status: passed" << endl;
+
+    }
+    else if(percentage >= 81 && percentage < 91) {
+        cout<<"Grade  : A" << endl;
+        cout<<"Status: passed" << endl;
+
+}
+    else if(percentage >= 71 && percentage < 81) {
+        cout<<"Grade : B+" << endl;
+        cout<<"Status: passed" << endl;
+
+    }
+    else if( percentage >= 61 && percentage < 71) {
+        cout<<"Grade  : B" << endl;
+        cout<<"Status: passed" << endl;
+
+    }
+    else if(percentage >= 51 && percentage < 61) {
+         cout<<"Grade : C+" << endl;
+         cout<<"Status: passed" << endl;
+
+    }
+    else if (percentage >= 41 && percentage < 51) {
+        cout<<"Grade : C" << endl;
+        cout<<"Status: passed" << endl;
+
+    }
+    else if(percentage >= 33 && percentage < 41) {
+        cout<<"Grade : D" << endl;
+        cout<<"Status: passed" << endl;
+
+
+    }
+    
+     else{
+        cout<<"failed";
+
+    }
+    cout<<"Total marks you got in exam is: " << total_marks << endl;
+    cout<<"Percentage you got in exam is: " << percentage << endl;
+
+    cout << "Do you want to enter marks again? (yes/no): ";
+    cin >> choice;
+} 
+  while (choice == 'yes' || choice == 'y');
+
+    return 0;
+}
