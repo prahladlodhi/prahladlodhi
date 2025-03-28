@@ -1,0 +1,111 @@
+import java.util.Scanner;
+
+public class marksheet {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String name;
+        while (true) {
+            System.out.print("Enter the name of student: ");
+            name = sc.nextLine().trim();
+            if (!name.isEmpty() && name.matches("[a-zA-Z ]+")) {
+                break; // Valid name entered
+            } else {
+                System.out.println("Invalid name. Please enter a valid name (letters and spaces only).");
+            }
+        }
+
+        System.out.print("Enter the roll number of student :");
+        String rollno = sc.next();
+
+        Float maths;
+        while (true) {
+            System.out.print("Enter the marks of student in maths: ");
+            maths = sc.nextFloat();
+            if (maths >= 0 && maths <= 100) {
+                break; // Valid marks entered
+            } else {
+                System.out.println("Invalid marks. Please enter a number between 0 and 100.");
+            }
+        }
+
+        Float science;
+        while (true) {
+            System.out.print("Enter the marks of student in science: ");
+            science = sc.nextFloat();
+            if (science >= 0 && science <= 100) {
+                break; // Valid marks entered
+            } else {
+                System.out.println("Invalid marks. Please enter a number between 0 and 100.");
+            }
+        }
+
+        Float hindi;
+        while (true) {
+            System.out.print("Enter the marks of student in hindi: ");
+            hindi = sc.nextFloat();
+            if (hindi >= 0 && hindi <= 100) {
+                break; // Valid marks entered
+            } else {
+                System.out.println("Invalid marks. Please enter a number between 0 and 100.");
+            }
+        }
+
+        Float english;
+        while (true) {
+            System.out.print("Enter the marks of student in english: ");
+            english = sc.nextFloat();
+            if (english >= 0 && english <= 100) {
+                break; // Valid marks entered
+            } else {
+                System.out.println("Invalid marks. Please enter a number between 0 and 100.");
+            }
+        }
+
+        Float socialscience;
+        while (true) {
+            System.out.print("Enter the marks of student in social science: ");
+            socialscience = sc.nextFloat();
+            if (socialscience >= 0 && socialscience <= 100) {
+                break; // Valid marks entered
+            } else {
+                System.out.println("Invalid marks. Please enter a number between 0 and 100.");
+            }
+        }
+
+        Float total = maths + science + hindi + english + socialscience;
+        Float percentage = (total / 500) * 100;
+
+        System.out.printf("%-20s %-15s %-10s %-10s %-10s %-10s %-10s %-10s %-10s\n", 
+                          "Name", "Roll No", "Maths", "Science", "Hindi", "English", "Social Science", "Total", "Percentage");
+        System.out.printf("%-20s %-15s %-10.2f %-10.2f %-10.2f %-10.2f %-10.2f %-10.2f %-10.2f\n", 
+                          name, rollno, maths, science, hindi, english, socialscience, total, percentage);
+
+        if (percentage <= 100 && percentage > 90) {
+            System.out.println("Grade A+");
+            System.out.println("passed");
+        } else if (percentage <= 90 && percentage > 80) {
+            System.out.println("Grade A");
+            System.out.println("passed");
+        } else if (percentage <= 80 && percentage > 70) {
+            System.out.println("Grade B+");
+            System.out.println("passed");
+        } else if (percentage <= 70 && percentage > 60) {
+            System.out.println("Grade B");
+            System.out.println("passed");
+        } else if (percentage <= 60 && percentage > 50) {
+            System.out.println("Grade C+");
+            System.out.println("passed");
+        } else if (percentage <= 50 && percentage > 40) {
+            System.out.println("Grade C");
+            System.out.println("passed");
+        } else if (percentage <= 40 && percentage > 32) {
+            System.out.println("Grade D");
+            System.out.println("passed");
+        } else {
+            System.out.println("Grade E");
+            System.out.println("failed");
+        }
+        System.out.println("Percentage is " + percentage);
+    }
+}
